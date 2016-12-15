@@ -28,4 +28,17 @@
         android:text="Go back to main"/>
 
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Populate Listview with arraylist"/>
+
+    <ListView
+        android:id="@+id/lv_userlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
+
 </LinearLayout>
