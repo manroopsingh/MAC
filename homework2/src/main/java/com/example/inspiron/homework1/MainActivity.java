@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
 
-            textView.setText("This is the dope Landscape!!");
+            textView.setText("This is the dope Landscape!!!");
 
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
 
-            textView.setText("This is the standard Portrait!!");
+            textView.setText("This is the standard Portrait!!!");
         }
     }
 
