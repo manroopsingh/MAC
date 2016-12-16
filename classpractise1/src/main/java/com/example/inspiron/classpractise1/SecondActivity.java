@@ -3,11 +3,13 @@ package com.example.inspiron.classpractise1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -26,26 +28,30 @@ public class SecondActivity extends AppCompatActivity {
 
 
         //getIntent and display from edittext from main activity
-//        name = (TextView) findViewById(R.id.TextView_Name);
-//        String myName = getIntent().getStringExtra("name");
-//        name.setText(myName);
+        name = (TextView) findViewById(R.id.TextView_Name);
+        String myName = getIntent().getStringExtra("name");
+        name.setText(myName);
 
+
+        //populating the arraylsit for listview
         users = new ArrayList<>();
-        users.add(new User("Manny", "Singh"));
-
-
-        ArrayAdapter<User> arrayAdapter = new ArrayAdapter<>(this, R.layout.simple_list_item1, users);
+        users.add(new User("Manroop", "Singh"));
+        users.add(new User("David","Jimenez"));
+        users.add(new User("Martin","Osorio"));
+        //setting the adapter
+        ArrayAdapter<User> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, users);
         listView = (ListView) findViewById(R.id.lv_userlist);
-
         listView.setAdapter(arrayAdapter);
 
 
         //parcelable
-//
-//        User myUser = getIntent().getParcelableExtra("key");
-//        Log.d(TAG, "onCreate: " + myUser.getFirstName() + myUser.getLastName());
 
-        //set result for returning to main activity
+        User myUser = getIntent().getParcelableExtra("key");
+        if(myUser != null) {
+            Log.d(TAG, "onCreate: " + myUser.getFirstName() + myUser.getLastName());
+            Toast.makeText(this, "1. Manroop Singh desplayed on the top", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "2. Check log.d onCreate in Android Monitor", Toast.LENGTH_SHORT).show();
+        }
 
 
 
