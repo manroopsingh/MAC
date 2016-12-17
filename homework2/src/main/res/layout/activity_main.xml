@@ -27,7 +27,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:onClick="displayState"
         android:text="Tap n hold(Code bind)"
         android:textSize="25dp" />
 

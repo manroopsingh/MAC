@@ -1,6 +1,9 @@
 package com.example.inspiron.homework1;
 
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.StateListDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -19,6 +22,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textView = (TextView) findViewById(R.id.tv_orientation);
+        button_sld = (Button) findViewById(R.id.buttonSLD);
+
+        StateListDrawable sld = new StateListDrawable();
+        sld.addState(new int[] {android.R.attr.state_pressed},new ColorDrawable(Color.parseColor("#e3bb87")));
+        sld.addState(new int[] { },new ColorDrawable(Color.parseColor("#60ff40")));
+
+        button_sld.setBackground(sld);
+
 
 
     }
@@ -41,6 +52,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayState(View view) {
-        Toast.makeText(this,"Pressed State then back to default state", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this,"Pressed State then back to default state", Toast.LENGTH_SHORT).show();
     }
 }
