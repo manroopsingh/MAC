@@ -1,0 +1,38 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.inspiron.classpractice3.BroadEventFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_blank_fragment" />
+        <Button
+            android:id="@+id/f_btn_broadcast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send Msg by Broadcast Receiver"/>
+
+        <Button
+            android:id="@+id/f_btn_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send Msg by EventBus"/>
+
+        <EditText
+            android:id="@+id/f_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+</FrameLayout>
