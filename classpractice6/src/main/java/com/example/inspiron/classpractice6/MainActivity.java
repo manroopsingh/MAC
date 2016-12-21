@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.a_main_btn)
     public void buttonClicked(){
         textView.setText(editText.getText().toString());
+
+
+
         }
 
 

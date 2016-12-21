@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:id="@+id/title"
+        android:text="Uninstall the app?"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_below="@id/title"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:id="@+id/textview"
+        android:text="Please don't do it.."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_below="@id/textview"
+        android:src="@drawable/cutecat"
+        android:id="@+id/imageview"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/imageview">
+
+        <Button
+            android:id="@+id/dialog_cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.50"
+            android:background="@color/colorAccent"
+            android:text="Fine, don't do it"
+            android:onClick="Cancel"/>
+
+        <Button
+            android:onClick="Uninstall"
+            android:id="@+id/dialog_ok"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.50"
+            android:background="@color/colorPrimary"
+            android:text="I don't care, do it" />
+    </LinearLayout>
+</RelativeLayout>

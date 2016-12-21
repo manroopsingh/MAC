@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.inspiron.homework4.MainActivity">
+    <item
+        android:title="Uninstall"
+        android:id="@+id/action_kill"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@android:drawable/ic_delete"/>
+    <item
+        android:title="Voice Search"
+        android:id="@+id/action_mic"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@android:drawable/ic_btn_speak_now"/>
+
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_mysettings"
+        android:orderInCategory="100"
+        android:title="My Settings"
+        app:showAsAction="never" />
+
+</menu>
