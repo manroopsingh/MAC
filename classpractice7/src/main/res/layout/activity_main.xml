@@ -44,4 +44,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="printLog"/>
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_progress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+    <Button
+        android:text="Start Service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="startService"/>
+
+    <Button
+        android:text="Stop Service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="stopService"/>
 </LinearLayout>
