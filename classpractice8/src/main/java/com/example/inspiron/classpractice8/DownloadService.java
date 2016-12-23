@@ -2,8 +2,6 @@ package com.example.inspiron.classpractice8;
 
 import android.app.IntentService;
 import android.content.Intent;
-import android.os.IBinder;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -28,25 +26,6 @@ public class DownloadService extends IntentService {
 
     public DownloadService() {
         super("DownloadService");
-    }
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        Log.d(TAG, "onCreate: " + Thread.currentThread());
-    }
-
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d(TAG, "onStartCommand: " + Thread.currentThread());
-        return super.onStartCommand(intent, flags, startId);
-    }
-
-    @Nullable
-    @Override
-    public IBinder onBind(Intent intent) {
-        Log.d(TAG, "onBind: " + Thread.currentThread());
-        return super.onBind(intent);
     }
 
 

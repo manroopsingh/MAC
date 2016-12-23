@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="400dp"
+    android:layout_gravity="center"
+    android:layout_height="600dp"
+    android:clickable="true"
+    android:gravity="center"
+    android:background="@color/colorAccent"
+    tools:context="com.example.inspiron.homework6.ChildFragment">
+
+    <TextView
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:id="@+id/tv_child"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="ChildFragment"
+        android:textColor="@android:color/white"
+        android:textSize="40dp" />
+
+</LinearLayout>
