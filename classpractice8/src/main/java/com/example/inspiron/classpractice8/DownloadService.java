@@ -3,7 +3,6 @@ package com.example.inspiron.classpractice8;
 import android.app.IntentService;
 import android.content.Intent;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -44,13 +43,14 @@ public class DownloadService extends IntentService {
             List<User> users = gson.fromJson(response, listtype);
 
             for (User user: users){
-                Log.d(TAG, "onHandleIntent: "+ user.getName() + user.getPassword());
+               // Log.d(TAG, "onHandleIntent: "+ user.getName() + user.getPassword());
 
                 name = intent.getStringExtra(MainActivity.USER);
                 password = intent.getStringExtra(MainActivity.PASSWORD);
                 if(name.equals(user.getName()) && password.equals(user.getPassword())){
 
-                    Toast.makeText(getApplicationContext(),"Login",Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, "onHandleIntent: Login");
+                   // Toast.makeText(getApplicationContext(),"Login",Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -60,7 +60,7 @@ public class DownloadService extends IntentService {
             e.printStackTrace();
         }
         String str = intent.getStringExtra(MainActivity.MY_KEY_VALUE);
-        Log.d(TAG, "onHandleIntent: " + str + Thread.currentThread()+ response) ;
+       // Log.d(TAG, "onHandleIntent: " + str + Thread.currentThread()+ response) ;
 
 
 

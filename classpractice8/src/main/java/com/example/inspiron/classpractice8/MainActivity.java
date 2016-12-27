@@ -12,6 +12,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 
 import java.io.IOException;
 
@@ -24,20 +25,23 @@ import okhttp3.Response;
 public class MainActivity extends AppCompatActivity {
 
     OkHttpClient client = new OkHttpClient();
-
     private static final String TAG = "MainActivity";
     public static final String MY_KEY_VALUE = "ANY_VALUE";
-
     public static final String USER = "USER";
     public static final String PASSWORD = "PASSWORD";
+
+    EditText et_username,et_password;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-//        StrictMode.setThreadPolicy(policy);
+
+
+        et_username = (EditText) findViewById(R.id.et_username);
+        et_password = (EditText) findViewById(R.id.et_password);
+
     }
 
     public void askPermissions(View view) {
@@ -113,8 +117,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void startIntentService(View view) {
         Intent in = new Intent(this, DownloadService.class);
-        in.putExtra(USER,"Juan");
-        in.putExtra(PASSWORD,"Hello1");
+        in.putExtra(USER,et_username.getText().toString());
+        in.putExtra(PASSWORD,et_password.getText().toString());
         in.putExtra(MY_KEY_VALUE,"asd");
         startService(in);
 
@@ -141,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void runOkhttp(View view) throws IOException {
-        //Log.d(TAG, run("sfs"));
+
     }
 }
 

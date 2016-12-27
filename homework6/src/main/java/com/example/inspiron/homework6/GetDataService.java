@@ -22,7 +22,7 @@ public class GetDataService extends IntentService {
 
     private static String TAG = "GetDataservice_TAG";
     OkHttpClient client = new OkHttpClient();
-    private static String URL="http://www.mocky.io/v2/57a4dfb40f0000821dc9a3b8";
+    private static String URL = "http://www.mocky.io/v2/57a4dfb40f0000821dc9a3b8";
     String httpresponse, name, password;
     Response urlResponse;
 
@@ -35,45 +35,23 @@ public class GetDataService extends IntentService {
 
         try {
             httpresponse = run(URL);
-
             List<User> users = null;
-
-
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode root = objectMapper.readTree(httpresponse);
             TypeFactory tf = objectMapper.getTypeFactory();
-            JavaType listtofobject = tf.constructCollectionType(ArrayList.class,User.class);
+            JavaType listtofobject = tf.constructCollectionType(ArrayList.class, User.class);
             users = objectMapper.readValue(root.traverse(), listtofobject);
 
-            for(User user: users) {
+
+            for (User user : users) {
                 Log.d(TAG, "onHandleIntent: " + user.getName());
             }
-           // Log.d(TAG, "onHandleIntent: "+ response.body().string());
-//            for (User user: response){
-//                Log.d(TAG, "onHandleIntent: "+ user.getName() + user.getPassword());
-//
-////                name = intent.getStringExtra(MainActivity.USER);
-////                password = intent.getStringExtra(MainActivity.PASSWORD);
-////                if(name.equals(user.getName()) && password.equals(user.getPassword())){
-////
-////                    Toast.makeText(getApplicationContext(),"Login",Toast.LENGTH_SHORT).show();
-////                }
-//
-//            }
-
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        String str = intent.getStringExtra(MainActivity.MY_KEY_VALUE);
-//        Log.d(TAG, "onHandleIntent: " + str + Thread.currentThread()+ response) ;
-
-
-
 
     }
-
-
 
     String run(String url) throws IOException {
         Request request = new Request.Builder()
@@ -81,8 +59,6 @@ public class GetDataService extends IntentService {
                 .build();
 
         urlResponse = client.newCall(request).execute();
-
-
         return urlResponse.body().string();
     }
 }
