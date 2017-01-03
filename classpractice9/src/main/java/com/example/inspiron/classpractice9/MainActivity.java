@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         gitHubService.getRepos(username).enqueue(new Callback<List<ResultAPus>>() {
             @Override
             public void onResponse(Call<List<ResultAPus>> call, Response<List<ResultAPus>> response) {
-                for(ResultAPus resultAPus : response.body()){
-                    Log.d(TAG, "onResponse: "  + resultAPus);
+                for (ResultAPus resultAPus : response.body()) {
+                    Log.d(TAG, "onResponse: " + resultAPus);
                     //textView.setText(resultAPus.toString());
 
                     ArrayAdapter<ResultAPus> arrayAdapter = new ArrayAdapter<ResultAPus>(
