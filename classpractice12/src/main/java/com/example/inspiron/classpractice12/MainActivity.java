@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "No Signed in", Toast.LENGTH_SHORT).show();
             CallLogInScreen();
         }
+
     }
 
     private void CallLogInScreen() {
@@ -84,4 +85,9 @@ public class MainActivity extends AppCompatActivity {
         CallLogInScreen();
     }
 
+    public void GoToSecondAct(View view) {
+
+        Intent in = new Intent(this, SecondActivity.class);
+        startActivity(in);
+    }
 }

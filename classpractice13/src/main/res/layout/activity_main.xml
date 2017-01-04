@@ -9,26 +9,36 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.inspiron.classpractice12.MainActivity">
+    tools:context="com.example.inspiron.classpractice13.MainActivity">
 
-    <TextView
-        android:id="@+id/tv_user"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/et1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:hint="Enter book name" />
+
+    <EditText
+        android:id="@+id/et2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter edition" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="SignOut"
-        android:text="Log out" />
+        android:onClick="AddToList"
+        android:text="Add to list" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Second Activity"
-        android:onClick="GoToSecondAct"/>
+        android:onClick="ViewList"
+        android:text="View list" />
 
+    <ListView
+        android:id="@+id/listview_books"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
 
 
 </LinearLayout>
