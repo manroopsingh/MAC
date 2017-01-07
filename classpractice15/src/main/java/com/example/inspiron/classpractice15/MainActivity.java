@@ -5,35 +5,116 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "Firebase:";
     private List<Movie> movieList = new ArrayList<>();
     private RecyclerView recyclerView;
     private MoviesAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private FirebaseDatabase database;
+    private DatabaseReference movies;
 
     private EditText editText_title, editText_genre, editText_year;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-       // editText_title = (EditText) find
+        editText_title = (EditText) findViewById(R.id.et_title);
+        editText_genre = (EditText) findViewById(R.id.et_genre);
+        editText_year = (EditText) findViewById(R.id.et_year);
 
+        //set adapter to recyclerView
         mAdapter = new MoviesAdapter(movieList);
         mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
 
-        prepareMovieData();
+        //firebase
+        database = FirebaseDatabase.getInstance();
+        movies = database.getReference("Movie");
+
+        //update db
+        movies.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    Movie value = postSnapshot.getValue(Movie.class);
+                    movieList.add(value);
+                }
+                mAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+
+    }
+
+
+
+    public void AddNewMovie(View view) {
+
+        String title, genre, year;
+        title = editText_title.getText().toString();
+        genre = editText_genre.getText().toString();
+        year = editText_year.getText().toString();
+
+        Movie movie = new Movie();
+        movie.setTitle(title);
+        movie.setGenre(genre);
+        movie.setYear(year);
+
+//        database = FirebaseDatabase.getInstance();
+//        movies = database.getReference("Movie");
+
+        String key = movies.push().getKey();
+
+        movies.child(key).setValue(movie);
+
+        Toast.makeText(this, "Movie Updated", Toast.LENGTH_SHORT).show();
+
+        editText_title.setText("");
+        editText_year.setText("");
+        editText_genre.setText("");
+
+    }
+
+    public void recyclerVertical(View view) {
+    }
+
+    public void recyclerHorizontal(View view) {
+
+        mLayoutManager = new LinearLayoutManager(this);
+
+        recyclerView.setLayoutManager(mLayoutManager);
+    }
+
+    public void recyclerGrid(View view) {
     }
 
     private void prepareMovieData() {
@@ -86,23 +167,5 @@ public class MainActivity extends AppCompatActivity {
         movieList.add(movie);
 
         mAdapter.notifyDataSetChanged();
-    }
-
-    public void AddNewMovie(View view) {
-
-
-    }
-
-    public void recyclerVertical(View view) {
-    }
-
-    public void recyclerHorizontal(View view) {
-
-        mLayoutManager = new LinearLayoutManager(this);
-
-        recyclerView.setLayoutManager(mLayoutManager);
-    }
-
-    public void recyclerGrid(View view) {
     }
 }

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "138961508124",
+    "firebase_url": "https://movies-dab81.firebaseio.com",
+    "project_id": "movies-dab81",
+    "storage_bucket": "movies-dab81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138961508124:android:c54367e73885753b",
+        "android_client_info": {
+          "package_name": "com.example.inspiron.classpractice15"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "138961508124-osajdn3m1gi2849qn43f1db2kagnulj4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.inspiron.classpractice15",
+            "certificate_hash": "6326316AF053B967161A0889F5BA77F9236DD994"
+          }
+        },
+        {
+          "client_id": "138961508124-bb73msvjftm7vhpmmuthlp70ipbsf9b1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbYIDulepfMeIvI3LG5vzIbH9mksv7jfs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "138961508124-bb73msvjftm7vhpmmuthlp70ipbsf9b1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

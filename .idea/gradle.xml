@@ -9,26 +9,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/classpractice10" />
-            <option value="$PROJECT_DIR$/classpractice11" />
-            <option value="$PROJECT_DIR$/classpractice12" />
-            <option value="$PROJECT_DIR$/classpractice13" />
             <option value="$PROJECT_DIR$/classpractice14" />
             <option value="$PROJECT_DIR$/classpractice15" />
-            <option value="$PROJECT_DIR$/classpractice2" />
-            <option value="$PROJECT_DIR$/classpractice3" />
-            <option value="$PROJECT_DIR$/classpractice4" />
-            <option value="$PROJECT_DIR$/classpractice5" />
-            <option value="$PROJECT_DIR$/classpractice6" />
-            <option value="$PROJECT_DIR$/classpractice7" />
-            <option value="$PROJECT_DIR$/classpractice8" />
-            <option value="$PROJECT_DIR$/classpractice9" />
-            <option value="$PROJECT_DIR$/homework1" />
-            <option value="$PROJECT_DIR$/homework2" />
-            <option value="$PROJECT_DIR$/homework3" />
-            <option value="$PROJECT_DIR$/homework4" />
-            <option value="$PROJECT_DIR$/homework5" />
-            <option value="$PROJECT_DIR$/homework6" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

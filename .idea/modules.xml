@@ -3,26 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MAC.iml" filepath="$PROJECT_DIR$/MAC.iml" />
-      <module fileurl="file://$PROJECT_DIR$/classpractice10/classpractice10.iml" filepath="$PROJECT_DIR$/classpractice10/classpractice10.iml" />
-      <module fileurl="file://$PROJECT_DIR$/classpractice11/classpractice11.iml" filepath="$PROJECT_DIR$/classpractice11/classpractice11.iml" />
-      <module fileurl="file://$PROJECT_DIR$/classpractice12/classpractice12.iml" filepath="$PROJECT_DIR$/classpractice12/classpractice12.iml" />
-      <module fileurl="file://$PROJECT_DIR$/classpractice13/classpractice13.iml" filepath="$PROJECT_DIR$/classpractice13/classpractice13.iml" />
       <module fileurl="file://$PROJECT_DIR$/classpractice14/classpractice14.iml" filepath="$PROJECT_DIR$/classpractice14/classpractice14.iml" />
       <module fileurl="file://$PROJECT_DIR$/classpractice15/classpractice15.iml" filepath="$PROJECT_DIR$/classpractice15/classpractice15.iml" />
-      <module fileurl="file://$PROJECT_DIR$/classpractice2/classpractice2.iml" filepath="$PROJECT_DIR$/classpractice2/classpractice2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/classpractice3/classpractice3.iml" filepath="$PROJECT_DIR$/classpractice3/classpractice3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/classpractice4/classpractice4.iml" filepath="$PROJECT_DIR$/classpractice4/classpractice4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/classpractice5/classpractice5.iml" filepath="$PROJECT_DIR$/classpractice5/classpractice5.iml" />
-      <module fileurl="file://$PROJECT_DIR$/classpractice6/classpractice6.iml" filepath="$PROJECT_DIR$/classpractice6/classpractice6.iml" />
-      <module fileurl="file://$PROJECT_DIR$/classpractice7/classpractice7.iml" filepath="$PROJECT_DIR$/classpractice7/classpractice7.iml" />
-      <module fileurl="file://$PROJECT_DIR$/classpractice8/classpractice8.iml" filepath="$PROJECT_DIR$/classpractice8/classpractice8.iml" />
-      <module fileurl="file://$PROJECT_DIR$/classpractice9/classpractice9.iml" filepath="$PROJECT_DIR$/classpractice9/classpractice9.iml" />
-      <module fileurl="file://$PROJECT_DIR$/homework1/homework1.iml" filepath="$PROJECT_DIR$/homework1/homework1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/homework2/homework2.iml" filepath="$PROJECT_DIR$/homework2/homework2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/homework3/homework3.iml" filepath="$PROJECT_DIR$/homework3/homework3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/homework4/homework4.iml" filepath="$PROJECT_DIR$/homework4/homework4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/homework5/homework5.iml" filepath="$PROJECT_DIR$/homework5/homework5.iml" />
-      <module fileurl="file://$PROJECT_DIR$/homework6/homework6.iml" filepath="$PROJECT_DIR$/homework6/homework6.iml" />
     </modules>
   </component>
 </project>
