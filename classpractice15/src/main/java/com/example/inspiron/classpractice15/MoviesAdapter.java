@@ -64,7 +64,9 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
         holder.genre.setText(movie.getGenre());
         holder.year.setText(movie.getYear());
 
-        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+        holder.relativeLayout.setOnClickListener(
+
+                new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
