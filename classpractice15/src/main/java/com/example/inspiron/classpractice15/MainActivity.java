@@ -1,5 +1,9 @@
 package com.example.inspiron.classpractice15;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -8,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -28,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private FirebaseDatabase database;
     private DatabaseReference movies;
+    private TextView textView;
+    private BroadcastReceiver br_hello, br_hola;
+    private IntentFilter if_hello, if_hola;
 
     private EditText editText_title, editText_genre, editText_year;
 
@@ -35,6 +43,32 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        textView = (TextView) findViewById(R.id.tv_custom);
+        textView.setText("Msg: " + getIntent().getStringExtra("Key"));
+
+
+        if_hello = new IntentFilter();
+        if_hello.addAction("Hello");
+        if_hola = new IntentFilter();
+        if_hola.addAction("Hello");
+
+        br_hello = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String msg = intent.getStringExtra("Key");
+                Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+            }
+        };
+
+
+        br_hola = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String msg = intent.getStringExtra("Key1");
+                Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+            }
+        };
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         editText_title = (EditText) findViewById(R.id.et_title);
@@ -75,7 +109,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        registerReceiver(br_hello,if_hello);
+        registerReceiver(br_hola,if_hola);
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        unregisterReceiver(br_hello);
+        unregisterReceiver(br_hola);
+
+    }
 
     public void AddNewMovie(View view) {
 

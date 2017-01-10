@@ -6,6 +6,7 @@ package com.example.inspiron.classpractice15;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
 
         public MyViewHolder(final View view) {
             super(view);
+            Log.d(TAG, "MyViewHolder: ");
             relativeLayout = (RelativeLayout) view.findViewById(R.id.rl_movie);
             title = (TextView) view.findViewById(R.id.title);
             genre = (TextView) view.findViewById(R.id.genre);
@@ -52,7 +54,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View movieView = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_list_row, parent, false);
 
-
+        Log.d(TAG, "onCreateViewHolder: ");
         viewHolder = new MyViewHolder(movieView);
         return viewHolder;
     }
@@ -60,6 +62,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         final Movie movie = moviesList.get(position);
+        Log.d(TAG, "onBindViewHolder: ");
         holder.title.setText(movie.getTitle());
         holder.genre.setText(movie.getGenre());
         holder.year.setText(movie.getYear());

@@ -11,6 +11,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.inspiron.classpractice15.MainActivity">
 
+    <TextView
+        android:id="@+id/tv_custom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Custom Data"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp" />
+
 
     <TextView
         android:layout_width="wrap_content"
