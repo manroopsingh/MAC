@@ -14,7 +14,6 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-
         //sugar database example
         Book book = new Book("Two States", "Chetan Bhagat");
         book.save();
@@ -23,7 +22,6 @@ public class SecondActivity extends AppCompatActivity {
 
         Book book1 = Book.findById(Book.class, 1);
         tv_sugar.setText(book1.title + " " + book1.edition);
-
     }
 
     public class Book extends SugarRecord {

@@ -36,9 +36,7 @@ public class DownloadService extends IntentService {
 
             Gson gson = new Gson();
 
-            Type listtype = new TypeToken<List<User>>(){
-
-            }.getType();
+            Type listtype = new TypeToken<List<User>>(){}.getType();
 
             List<User> users = gson.fromJson(response, listtype);
 
